@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "cdac61b6-602c-468f-8290-335aa1e02829",
+		"name": "Store Apps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "35987087"
+	},
+	"item": [
+		{
+			"name": "items",
+			"item": [
+				{
+					"name": "Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/v1/items",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"items"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"description": "(not required) (defaul = 0) .: page start from 0",
+									"disabled": true
+								},
+								{
+									"key": "perPage",
+									"value": "1",
+									"description": "(not required) (defaul = 10)",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name",
+									"description": "(not required) (defaul = createdAt) (value = createdAt ; updatedAt ; name ; price)",
+									"disabled": true
+								},
+								{
+									"key": "descending",
+									"value": "false",
+									"description": "(not required) (defaul = true)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/v1/items/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"items",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8e1f25c7-3ac7-4452-9288-69d959f40dec"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pen\",\n    \"price\": 9000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/v1/items"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pencil\",\n    \"price\": 2000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/v1/items/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"items",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/v1/items/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"items",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "f6477a95-23d9-42fd-ace7-c56a05ed5a63"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/v1/inventories",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"inventories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"description": "(not required) (defaul = 0)",
+									"disabled": true
+								},
+								{
+									"key": "perPage",
+									"value": "1",
+									"description": "(not required) (defaul = 10)",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "type",
+									"description": "(not required) (defaul = createdAt) (value = createdAt ; updatedAt ; item.name ; item.price ; quantity ; type)",
+									"disabled": true
+								},
+								{
+									"key": "descending",
+									"value": "false",
+									"description": "(not required) (defaul = true)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/v1/inventories/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"inventories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "e3a0f20d-af63-4b9d-afcd-0ce0f9fa2264"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemId\": \"24d37994-a022-4b14-ae8d-9b1eed8c5665\",\n    \"quantity\": 10,\n    \"type\": \"T\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/v1/inventories"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemId\": \"65723262-3362-4be4-bce6-60636a28a2b4\",\n    \"quantity\": 10,\n    \"type\": \"T\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/v1/inventories/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"inventories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ee2b8fc8-8193-4895-be1b-25b017f8e639"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/v1/inventories/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"inventories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "e3a0f20d-af63-4b9d-afcd-0ce0f9fa2264"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/v1/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"description": "(not required) (defaul = 0)",
+									"disabled": true
+								},
+								{
+									"key": "perPage",
+									"value": "1",
+									"description": "(not required) (defaul = 10)",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "type",
+									"description": "(not required) (defaul = createdAt) (value = createdAt ; updatedAt ; item.name ; item.price ; quantity ; type)",
+									"disabled": true
+								},
+								{
+									"key": "descending",
+									"value": "false",
+									"description": "(not required) (defaul = true)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/v1/orders/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "e3a0f20d-af63-4b9d-afcd-0ce0f9fa2264"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemId\": \"65723262-3362-4be4-bce6-60636a28a2b4\",\n    \"quantity\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/v1/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemId\": \"65723262-3362-4be4-bce6-60636a28a2b4\",\n    \"quantity\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/v1/orders/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5da5fbdd-c2b9-4880-b0ab-b964639ec039"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/v1/orders/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "e3a0f20d-af63-4b9d-afcd-0ce0f9fa2264"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
